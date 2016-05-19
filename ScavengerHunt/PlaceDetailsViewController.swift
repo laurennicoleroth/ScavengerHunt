@@ -21,6 +21,8 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
     @IBOutlet var address: UILabel!
     @IBOutlet var starRating: UIImageView!
     
+    var placeTitle = "Change me"
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             self.navigationItem.title = place.name
             
             //Set place details
-            placeName.text = "Change Me" //place.name
+            placeName.text = placeTitle
             placeRating.text = "\(place.rating)"
 //            starRating.image = StarRating.rating(place.rating)
             
@@ -65,6 +67,32 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             
             
             //Display map
+//            let coordinates : CLLocationCoordinate2D = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+//            
+//            let camera : GMSCameraPosition = GMSCameraPosition(target:coordinates, zoom:15, bearing:0, viewingAngle:0)
+//            
+//            self.mapView.camera = camera
+//            self.mapView.myLocationEnabled = true
+//            self.mapView.delegate = self;
+//            
+//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
+//            self.view.addGestureRecognizer(tapGestureRecognizer)
+//            
+//            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+//            self.view.addGestureRecognizer(longPressRecognizer)
+//            
+//            var touchPoint = longPressRecognizer.locationInView(mapView)
+//            var touchCoordinates = mapView.convertPoint(touchPoint, toCoordinateSpace: mapView)
+//
+//            let marker : GMSMarker = GMSMarker()
+//            marker.position = CLLocationCoordinate2D(latitude: 40.74, longitude: -73.34)
+//            marker.title = place.name
+//            marker.icon =  UIImage(named:"locationPin")
+//            marker.map = self.mapView;
+            
+            let longPressRecognizer = UITapGestureRecognizer(target: self, action: "longPressed:")
+            self.view.addGestureRecognizer(longPressRecognizer)
+            
             let coordinates : CLLocationCoordinate2D = CLLocationCoordinate2DMake(place.latitude, place.longitude)
             
             let camera : GMSCameraPosition = GMSCameraPosition(target:coordinates, zoom:15, bearing:0, viewingAngle:0)
@@ -73,26 +101,21 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             self.mapView.myLocationEnabled = true
             self.mapView.delegate = self;
             
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
-            self.view.addGestureRecognizer(tapGestureRecognizer)
-            
-            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
-            self.view.addGestureRecognizer(longPressRecognizer)
-            
-            var touchPoint = longPressRecognizer.locationInView(mapView)
-            //            var touchCoordinates =
-            let marker : GMSMarker = GMSMarker()
-            
-            
-            //
-            //            let marker : GMSMarker = GMSMarker()
-            //            marker.position = coordinates
-            //            marker.title = place.name
-            //            marker.icon =  UIImage(named:"locationPin")
-            //            marker.map = self.mapView;
-            
         }
         
+    }
+    
+    func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        let marker = GMSMarker(position: coordinate)
+        marker.map = mapView
+        marker.title =  placeTitle
+        marker.icon =  UIImage(named:"locationPin")
+    }
+    
+    func checkMarkerPlacement(coordinates: CLLocationCoordinate2D) {
+        print("You pinned \(coordinates)")
+        print("Correct is \")
     }
     
     
@@ -139,6 +162,9 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
             placeImageView.image = photo
             dismissViewControllerAnimated(true, completion: nil)
+            
+            
+            //MARK - TODO: Save this image to the place
 
         }
     
