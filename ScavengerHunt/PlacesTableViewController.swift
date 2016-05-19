@@ -6,90 +6,193 @@
 //  Copyright © 2016 Lauren Nicole Roth. All rights reserved.
 //
 
+
+import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class PlacesTableViewController: UITableViewController {
-
+class PlacesTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var googlePlaces: [Place]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationController?.navigationBar.hidden = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //customize navigation bar
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 102.0/255.0, green:102.0/255.0, blue:255.0/255.0, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        let navFont: UIFont = UIFont(name:"Avenir-Heavy", size:19.0)!
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: navFont]
+        
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
+    
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.googlePlaces?.count ?? 0
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PlaceTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell") as! PlaceTableViewCell
+        
+        print(googlePlaces!.first)
+        
+        if let places = googlePlaces {
+            var place = places[indexPath.row]
+            
+            var nameArray = Array(arrayLiteral: place.name)
+            
+            
+            cell.name?.text = place.name
+            cell.rating.text = "Hint"
+            //            cell.starRating.image = StarRating.rating(place.rating)
+            
+            
+            //Get photo reference
+            //Get image in the background and as needed for display.
+            //We do not want to get all images at once which could cause performance
+            //issues. Plus it's unnecessary. Need to cache the images once they are downloaded
+            let photoParams: [String:AnyObject] = ["maxwidth" : 400,
+                                                   "photoreference" : "\(place.photoReference)",
+                                                   "key": Constants.Keys.GoogleKey]
+            
+            if(place.photo == nil) {
+                Alamofire.request(.GET, Constants.Url.GoogleApiPlaceSearchPhoto, parameters: photoParams).response{
+                    (request, response, dataIn, error) in
+                    
+                    //Get back to main thread
+                    //Any changes to UI need to be done in the main thread
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if let imageData = dataIn {
+                            
+                            let photo = UIImage(data: imageData)
+                            self.googlePlaces?[indexPath.row].photo = photo  //cache image
+                            //                            print(photo)
+                            cell.photo.image = UIImage(named: "default")
+                            cell.setNeedsDisplay()
+                        }
+                    }
+                }
+                
+            }
+            else{
+                cell.photo.image = place.photo
+            }
+            
+            
+            //Get Icon
+            //Get image in the background and as needed for display.
+            //We do not want to get all icon images at once which could cause performance
+            //issues. Plus it's unnecessary. Need to cache the images once they are downloaded
+            
+            if(place.icon == nil) {
+                Alamofire.request(.GET, place.iconName).response{ (request, response, dataIn, error) in
+                    
+                    //get back to main thread
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if let imageData = dataIn {
+                            let icon = UIImage(data: imageData)
+                            self.googlePlaces?[indexPath.row].icon = icon  //cache image
+                            place.icon = icon
+                            cell.icon.image = place.icon
+                            // cell.layoutIfNeeded()
+                            
+                        }
+                    }
+                    
+                    
+                }
+            }
+            else{
+                
+                cell.icon.image = place.icon
+            }
+            
+            
+            // Get more details about place using placeid property
+            let detailParams: [String:AnyObject] = ["placeid" : place.placeID,
+                                                    "key": Constants.Keys.GoogleKey]
+            
+            Alamofire.request(.GET, Constants.Url.GoogleApiPlaceSearchDetailsJson, parameters: detailParams).responseJSON{
+                
+                response in
+                
+                if let data = response.data {
+                    let json = JSON(data: data)
+                    
+                    var place = self.googlePlaces?[indexPath.row]
+                    PlaceJSONParser.createFromDetails(json, place:&place)
+                    
+                    self.googlePlaces?[indexPath.row] = place!
+                    
+                    let priceLevel = place?.priceLevel
+                    
+                    if(priceLevel >= 4.0){
+                        cell.priceLevel.text = "$$$$"
+                    }
+                    else if (priceLevel >= 3.0){
+                        cell.priceLevel.text = "$$$"
+                    }
+                    else if (priceLevel >= 2.0) {
+                        cell.priceLevel.text = "$$"
+                    }
+                    else if (priceLevel >= 1.0) {
+                        cell.priceLevel.text = "$"
+                    }
+                    else{
+                        cell.priceLevel.text = " "
+                    }
+                    
+                }
+            }
+            
+            
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            var selectedItem = googlePlaces![indexPath.row]
+            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+            selectedItem.photo = photo
+            dismissViewControllerAnimated(true, completion: {
+                //                self.googlePlaces.save()
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            })
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+        
+        //push to detail view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
+        if let placeDetailsVC = storyboard.instantiateViewControllerWithIdentifier("PlaceDetailsViewController") as? PlaceDetailsViewController {
+            
+            if let places = googlePlaces{
+                placeDetailsVC.place = places[indexPath.row]
+                self.navigationController?.pushViewController(placeDetailsVC, animated: true)
+            }
+        }
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
