@@ -38,13 +38,6 @@
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="arW-fn-A3b"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-Pl-iMq">
-                                        <rect key="frame" x="290" y="314" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="2Ok-Oe-FGJ"/>
-                                            <constraint firstAttribute="width" constant="20" id="Veb-XB-8iB"/>
-                                        </constraints>
-                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scavenger Hunt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-dV-pNf">
                                         <rect key="frame" x="26" y="52" width="549" height="136"/>
                                         <constraints>
@@ -54,21 +47,28 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-Pl-iMq">
+                                        <rect key="frame" x="290" y="415" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="2Ok-Oe-FGJ"/>
+                                            <constraint firstAttribute="width" constant="20" id="Veb-XB-8iB"/>
+                                        </constraints>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="JXa-Vv-lwb" firstAttribute="top" secondItem="xRH-Pl-iMq" secondAttribute="bottom" constant="17" id="6Np-iZ-SQY"/>
                                     <constraint firstItem="HCg-dV-pNf" firstAttribute="top" secondItem="kC2-YO-KDe" secondAttribute="top" constant="52" id="B9x-w5-EnW"/>
+                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="centerX" secondItem="JXa-Vv-lwb" secondAttribute="centerX" id="E83-py-JmF"/>
                                     <constraint firstItem="HCg-dV-pNf" firstAttribute="centerX" secondItem="aqs-6Z-XQq" secondAttribute="centerX" id="Kbp-yq-YGe"/>
                                     <constraint firstAttribute="bottom" secondItem="aqs-6Z-XQq" secondAttribute="bottom" id="KqD-kB-hZm"/>
                                     <constraint firstAttribute="bottom" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="39" id="Lfv-ot-YJo"/>
+                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="centerX" secondItem="HCg-dV-pNf" secondAttribute="centerX" id="Rt0-2U-eZi"/>
                                     <constraint firstItem="aqs-6Z-XQq" firstAttribute="top" secondItem="HCg-dV-pNf" secondAttribute="bottom" constant="-252" id="VMl-PD-bhg"/>
-                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="centerX" secondItem="xRH-Pl-iMq" secondAttribute="centerX" id="aut-Yy-y9d"/>
                                     <constraint firstItem="aqs-6Z-XQq" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leading" id="der-jy-hTR"/>
                                     <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerY" secondItem="kC2-YO-KDe" secondAttribute="centerY" id="eBG-fL-BzQ"/>
                                     <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="mQs-lQ-ro3"/>
                                     <constraint firstItem="HCg-dV-pNf" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leadingMargin" constant="18" id="qXc-wC-LJY"/>
-                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="wZj-4u-rVw"/>
-                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="top" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="-183" id="z10-ai-qwa"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">

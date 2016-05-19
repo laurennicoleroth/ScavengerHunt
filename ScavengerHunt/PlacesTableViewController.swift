@@ -47,7 +47,6 @@ class PlacesTableViewController: UITableViewController, UIImagePickerControllerD
             
             var nameArray = Array(arrayLiteral: place.name)
             
-            
 //            cell.name?.text = place.name
             cell.name?.text = "Place Clue Goes Here"
             cell.rating.text = "Hint"
@@ -157,30 +156,30 @@ class PlacesTableViewController: UITableViewController, UIImagePickerControllerD
         return cell
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            var selectedItem = googlePlaces![indexPath.row]
-            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
-            selectedItem.photo = photo
-            dismissViewControllerAnimated(true, completion: {
-                //                self.googlePlaces.save()
-                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            })
-        }
-    }
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        if let indexPath = tableView.indexPathForSelectedRow {
+//            var selectedItem = googlePlaces![indexPath.row]
+//            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+//            selectedItem.photo = photo
+//            dismissViewControllerAnimated(true, completion: {
+//                //                self.googlePlaces.save()
+//                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//            })
+//        }
+//    }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let imagePicker = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-            imagePicker.sourceType = .Camera
-        } else {
-            imagePicker.sourceType = .PhotoLibrary
-        }
-        
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
+//        let imagePicker = UIImagePickerController()
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+//            imagePicker.sourceType = .Camera
+//        } else {
+//            imagePicker.sourceType = .PhotoLibrary
+//        }
+//        
+//        imagePicker.delegate = self
+//        presentViewController(imagePicker, animated: true, completion: nil)
         
         
         //push to detail view controller
