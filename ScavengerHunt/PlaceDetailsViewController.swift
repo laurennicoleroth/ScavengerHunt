@@ -41,7 +41,7 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             
             
             if let address = place.address {
-                self.address.text = "Populate from dropped pin"
+                self.address.text = "Tap to drop pins to guess the location."
             }
             
             
@@ -118,10 +118,20 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         
         let pinnedLocation = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
         let accurateLocation = CLLocation(latitude: place!.latitude, longitude: place!.longitude)
-        let distance = accurateLocation.distanceFromLocation(pinnedLocation)
+        let distance = accurateLocation.distanceFromLocation(pinnedLocation) * 3.28084
         
-        placeName.text = "Correct location is \(distance) away!"
-        print("Distance from correct location is: \(distance)")
+        //If user guesses within 1000 ft, the answer is revealed!
+        if distance < 1000.00 {
+            placeName.text = "Congrats! You found: " + place!.name
+            address.text = place!.address
+            placeImageView.image = place!.photo
+            
+        } else {
+            placeName.text = "Correct location is \(distance) feet away!"
+            print("Distance from correct location is: \(distance)")
+        }
+        
+        
         
     }
     
