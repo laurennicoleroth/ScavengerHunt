@@ -48,7 +48,8 @@ class PlacesTableViewController: UITableViewController, UIImagePickerControllerD
             var nameArray = Array(arrayLiteral: place.name)
             
             
-            cell.name?.text = place.name
+//            cell.name?.text = place.name
+            cell.name?.text = "Place Clue Goes Here"
             cell.rating.text = "Hint"
             //            cell.starRating.image = StarRating.rating(place.rating)
             

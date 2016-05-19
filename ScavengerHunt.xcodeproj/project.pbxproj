@@ -17,6 +17,7 @@
 		9614A2011CEE0C9600A648A4 /* ScavengerHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2001CEE0C9600A648A4 /* ScavengerHuntTests.swift */; };
 		9614A20F1CEE132900A648A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A20E1CEE132900A648A4 /* Constants.swift */; };
 		9614A2111CEE156A00A648A4 /* PlaceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */; };
+		96B868211CEE2AC5001C47C9 /* PhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B868201CEE2AC5001C47C9 /* PhotoImageView.swift */; };
 		96EA81141CEE194B00083727 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA81131CEE194B00083727 /* PlacesTableViewController.swift */; };
 		96EA81161CEE1C3300083727 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA81151CEE1C3300083727 /* PlaceTableViewCell.swift */; };
 		96EA81181CEE207000083727 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA81171CEE207000083727 /* PlaceDetailsViewController.swift */; };
@@ -52,6 +53,7 @@
 		9614A2021CEE0C9600A648A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9614A20E1CEE132900A648A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceJSONParser.swift; sourceTree = "<group>"; };
+		96B868201CEE2AC5001C47C9 /* PhotoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoImageView.swift; sourceTree = "<group>"; };
 		96EA81131CEE194B00083727 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		96EA81151CEE1C3300083727 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		96EA81171CEE207000083727 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */,
 				96EA81151CEE1C3300083727 /* PlaceTableViewCell.swift */,
 				96EA81191CEE240D00083727 /* StarRating.swift */,
+				96B868201CEE2AC5001C47C9 /* PhotoImageView.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				96EA81181CEE207000083727 /* PlaceDetailsViewController.swift in Sources */,
 				9614A1EC1CEE0C9600A648A4 /* AppDelegate.swift in Sources */,
 				9614A20F1CEE132900A648A4 /* Constants.swift in Sources */,
+				96B868211CEE2AC5001C47C9 /* PhotoImageView.swift in Sources */,
 				96EA81141CEE194B00083727 /* PlacesTableViewController.swift in Sources */,
 				96EA81161CEE1C3300083727 /* PlaceTableViewCell.swift in Sources */,
 			);
