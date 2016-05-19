@@ -16,6 +16,7 @@
 		9614A1F61CEE0C9600A648A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9614A1F41CEE0C9600A648A4 /* LaunchScreen.storyboard */; };
 		9614A2011CEE0C9600A648A4 /* ScavengerHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2001CEE0C9600A648A4 /* ScavengerHuntTests.swift */; };
 		9614A20F1CEE132900A648A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A20E1CEE132900A648A4 /* Constants.swift */; };
+		9614A2111CEE156A00A648A4 /* PlaceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9614A2001CEE0C9600A648A4 /* ScavengerHuntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerHuntTests.swift; sourceTree = "<group>"; };
 		9614A2021CEE0C9600A648A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9614A20E1CEE132900A648A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceJSONParser.swift; sourceTree = "<group>"; };
 		C00172E6AF2922ABAFCE23C5 /* Pods-ScavengerHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHuntTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScavengerHuntTests/Pods-ScavengerHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				9614A20D1CEE12A200A648A4 /* Controllers */,
-				9614A20B1CEE128100A648A4 /* Storyboards */,
+				9614A2121CEE157200A648A4 /* View Models */,
+				9614A20B1CEE128100A648A4 /* View */,
 				9614A20C1CEE128B00A648A4 /* Supporting Files */,
 			);
 			path = ScavengerHunt;
@@ -107,13 +110,14 @@
 			path = ScavengerHuntTests;
 			sourceTree = "<group>";
 		};
-		9614A20B1CEE128100A648A4 /* Storyboards */ = {
+		9614A20B1CEE128100A648A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				9614A1EF1CEE0C9600A648A4 /* Main.storyboard */,
 				9614A1F41CEE0C9600A648A4 /* LaunchScreen.storyboard */,
+				9614A1F21CEE0C9600A648A4 /* Assets.xcassets */,
 			);
-			name = Storyboards;
+			name = View;
 			sourceTree = "<group>";
 		};
 		9614A20C1CEE128B00A648A4 /* Supporting Files */ = {
@@ -121,7 +125,6 @@
 			children = (
 				9614A20E1CEE132900A648A4 /* Constants.swift */,
 				9614A1EB1CEE0C9600A648A4 /* AppDelegate.swift */,
-				9614A1F21CEE0C9600A648A4 /* Assets.xcassets */,
 				9614A1F71CEE0C9600A648A4 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -133,6 +136,14 @@
 				9614A1ED1CEE0C9600A648A4 /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9614A2121CEE157200A648A4 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 		C740C18299C8A2743C44DA23 /* Pods */ = {
@@ -355,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9614A2111CEE156A00A648A4 /* PlaceJSONParser.swift in Sources */,
 				9614A1EE1CEE0C9600A648A4 /* WelcomeViewController.swift in Sources */,
 				9614A1EC1CEE0C9600A648A4 /* AppDelegate.swift in Sources */,
 				9614A20F1CEE132900A648A4 /* Constants.swift in Sources */,
