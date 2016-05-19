@@ -119,7 +119,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func showActivityIndicator(){
+    func showActivityIndicator() {
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.activityIndicator.alpha = 1.0

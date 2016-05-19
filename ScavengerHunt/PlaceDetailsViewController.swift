@@ -143,14 +143,8 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
     @IBAction func loadWebsite(sender: AnyObject) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
-//        if let webVC = storyboard.instantiateViewControllerWithIdentifier("WebViewController") as? WebViewController {
-//            
-//            if let place = place {
-//                webVC.name = place.name
-//                webVC.url = place.website
-//                self.navigationController?.pushViewController(webVC, animated: true)
-//            }
-//        }
+        
+        // TODO - Load more details about the location in a Web View after you've solved it 
         
     }
     
