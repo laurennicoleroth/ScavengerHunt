@@ -17,6 +17,7 @@
 		9614A2011CEE0C9600A648A4 /* ScavengerHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2001CEE0C9600A648A4 /* ScavengerHuntTests.swift */; };
 		9614A20F1CEE132900A648A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A20E1CEE132900A648A4 /* Constants.swift */; };
 		9614A2111CEE156A00A648A4 /* PlaceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */; };
+		96EA81141CEE194B00083727 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA81131CEE194B00083727 /* PlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9614A2021CEE0C9600A648A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9614A20E1CEE132900A648A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9614A2101CEE156A00A648A4 /* PlaceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceJSONParser.swift; sourceTree = "<group>"; };
+		96EA81131CEE194B00083727 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		C00172E6AF2922ABAFCE23C5 /* Pods-ScavengerHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHuntTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScavengerHuntTests/Pods-ScavengerHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				9614A1ED1CEE0C9600A648A4 /* WelcomeViewController.swift */,
+				96EA81131CEE194B00083727 /* PlacesTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				9614A1EE1CEE0C9600A648A4 /* WelcomeViewController.swift in Sources */,
 				9614A1EC1CEE0C9600A648A4 /* AppDelegate.swift in Sources */,
 				9614A20F1CEE132900A648A4 /* Constants.swift in Sources */,
+				96EA81141CEE194B00083727 /* PlacesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
