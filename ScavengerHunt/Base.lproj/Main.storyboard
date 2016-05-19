@@ -88,6 +88,109 @@
             </objects>
             <point key="canvasLocation" x="1001" y="-511"/>
         </scene>
+        <!--Find Museums From Clues-->
+        <scene sceneID="omR-vi-KtX">
+            <objects>
+                <tableViewController storyboardIdentifier="PlacesTableViewController" id="KZh-bH-sGw" customClass="PlacesTableViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" id="ppm-OC-fR1">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" rowHeight="135" id="hFE-Wt-HMq" customClass="PlaceTableViewCell" customModule="ScavengerHunt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="135"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hFE-Wt-HMq" id="p7Y-a2-9a2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="134.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eef-Pj-zR6">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="135"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="135" id="51J-i6-qep"/>
+                                                <constraint firstAttribute="width" constant="116" id="V5B-7v-0mr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-Qv-QcO">
+                                            <rect key="frame" x="127" y="42" width="58" height="20"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="1" green="0.56905324840000004" blue="0.23352693259999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CH7-5y-J8v">
+                                            <rect key="frame" x="127" y="69" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="BN9-dS-bne"/>
+                                                <constraint firstAttribute="width" constant="24" id="QCF-Ek-nq4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOe-xW-6Vq">
+                                            <rect key="frame" x="160" y="69" width="51" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                            <color key="textColor" red="0.21039731680000001" green="0.65425696600000005" blue="0.23635190919999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM8-7Z-6qT">
+                                            <rect key="frame" x="127" y="16" width="434" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                            <color key="textColor" red="0.35101010100000002" green="0.35101010100000002" blue="0.35101010100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="56e-qA-irT">
+                                            <rect key="frame" x="576" y="46" width="8" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13" id="k0Y-u3-Wfl"/>
+                                                <constraint firstAttribute="width" constant="8" id="prP-UV-vlp"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDI-dz-526">
+                                            <rect key="frame" x="193" y="42" width="110" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="2pM-dc-cwu"/>
+                                                <constraint firstAttribute="width" constant="110" id="DIW-h0-fmh"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WOe-xW-6Vq" firstAttribute="leading" secondItem="CH7-5y-J8v" secondAttribute="trailing" constant="9" id="59f-yf-apP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="56e-qA-irT" secondAttribute="trailing" constant="8" id="8le-Fz-TBv"/>
+                                        <constraint firstItem="CH7-5y-J8v" firstAttribute="top" secondItem="mzD-Qv-QcO" secondAttribute="bottom" constant="7" id="A1S-ah-PzT"/>
+                                        <constraint firstItem="eef-Pj-zR6" firstAttribute="top" secondItem="p7Y-a2-9a2" secondAttribute="topMargin" constant="-8" id="Aww-op-Idr"/>
+                                        <constraint firstItem="WOe-xW-6Vq" firstAttribute="top" secondItem="CH7-5y-J8v" secondAttribute="top" id="BTd-HS-uWe"/>
+                                        <constraint firstItem="CH7-5y-J8v" firstAttribute="leading" secondItem="mzD-Qv-QcO" secondAttribute="leading" id="IQ1-17-fxI"/>
+                                        <constraint firstItem="bM8-7Z-6qT" firstAttribute="leading" secondItem="eef-Pj-zR6" secondAttribute="trailing" constant="11" id="JXE-Ce-Kph"/>
+                                        <constraint firstItem="mzD-Qv-QcO" firstAttribute="leading" secondItem="bM8-7Z-6qT" secondAttribute="leading" id="PX7-r3-Hhb"/>
+                                        <constraint firstItem="56e-qA-irT" firstAttribute="leading" secondItem="bM8-7Z-6qT" secondAttribute="trailing" constant="30" id="Qhf-yE-blU"/>
+                                        <constraint firstItem="gDI-dz-526" firstAttribute="leading" secondItem="mzD-Qv-QcO" secondAttribute="trailing" constant="8" id="WYh-cU-7ud"/>
+                                        <constraint firstItem="gDI-dz-526" firstAttribute="top" secondItem="mzD-Qv-QcO" secondAttribute="top" id="WuA-Ef-puU"/>
+                                        <constraint firstItem="eef-Pj-zR6" firstAttribute="leading" secondItem="p7Y-a2-9a2" secondAttribute="leadingMargin" constant="-8" id="auB-XD-3lZ"/>
+                                        <constraint firstItem="mzD-Qv-QcO" firstAttribute="top" secondItem="bM8-7Z-6qT" secondAttribute="bottom" constant="5" id="dEp-y6-Dh5"/>
+                                        <constraint firstItem="bM8-7Z-6qT" firstAttribute="top" secondItem="p7Y-a2-9a2" secondAttribute="topMargin" constant="8" id="rj7-h2-oxn"/>
+                                        <constraint firstItem="56e-qA-irT" firstAttribute="top" secondItem="p7Y-a2-9a2" secondAttribute="topMargin" constant="38" id="vmX-2B-Gaf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="CH7-5y-J8v" id="KH8-zN-VKO"/>
+                                    <outlet property="name" destination="bM8-7Z-6qT" id="Mg8-po-NBb"/>
+                                    <outlet property="photo" destination="eef-Pj-zR6" id="Sgw-4F-WXk"/>
+                                    <outlet property="priceLevel" destination="WOe-xW-6Vq" id="fwd-5m-ZFx"/>
+                                    <outlet property="rating" destination="mzD-Qv-QcO" id="9HQ-a8-0lE"/>
+                                    <outlet property="starRating" destination="gDI-dz-526" id="oDe-ux-2XK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KZh-bH-sGw" id="Uhg-s4-msJ"/>
+                            <outlet property="delegate" destination="KZh-bH-sGw" id="y8f-Vl-3Le"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Find Museums From Clues" id="a49-A3-3uA"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1J-Ie-fvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="-511"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ulm-dA-J50">
             <objects>
@@ -108,6 +211,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="disclosureIndicator" width="8" height="13"/>
         <image name="nyc" width="736" height="1309"/>
     </resources>
 </document>
