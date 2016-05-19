@@ -170,12 +170,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="icon" destination="CH7-5y-J8v" id="KH8-zN-VKO"/>
-                                    <outlet property="name" destination="bM8-7Z-6qT" id="Mg8-po-NBb"/>
-                                    <outlet property="photo" destination="eef-Pj-zR6" id="Sgw-4F-WXk"/>
-                                    <outlet property="priceLevel" destination="WOe-xW-6Vq" id="fwd-5m-ZFx"/>
-                                    <outlet property="rating" destination="mzD-Qv-QcO" id="9HQ-a8-0lE"/>
-                                    <outlet property="starRating" destination="gDI-dz-526" id="oDe-ux-2XK"/>
+                                    <outlet property="icon" destination="CH7-5y-J8v" id="NvZ-ED-nk9"/>
+                                    <outlet property="name" destination="bM8-7Z-6qT" id="U0x-NG-0wv"/>
+                                    <outlet property="photo" destination="eef-Pj-zR6" id="Kb3-l1-Eja"/>
+                                    <outlet property="priceLevel" destination="WOe-xW-6Vq" id="OcN-db-40f"/>
+                                    <outlet property="rating" destination="mzD-Qv-QcO" id="v3F-oV-ICQ"/>
+                                    <outlet property="starRating" destination="gDI-dz-526" id="8th-Fu-btm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
