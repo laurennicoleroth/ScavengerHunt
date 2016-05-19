@@ -17,6 +17,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var latitude: Double = 0.0
     var longitude: Double = 0.0
+    
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {

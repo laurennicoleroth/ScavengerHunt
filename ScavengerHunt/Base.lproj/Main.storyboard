@@ -83,6 +83,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pk9-jO-pT1"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="xRH-Pl-iMq" id="WvI-BZ-lFI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
