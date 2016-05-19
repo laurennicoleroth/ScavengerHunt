@@ -209,9 +209,125 @@
             </objects>
             <point key="canvasLocation" x="322" y="-511"/>
         </scene>
+        <!--Place Details View Controller-->
+        <scene sceneID="I9g-1f-Iag">
+            <objects>
+                <viewController storyboardIdentifier="PlaceDetailsViewController" id="d39-3a-FcG" customClass="PlaceDetailsViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n78-Wo-DoO"/>
+                        <viewControllerLayoutGuide type="bottom" id="ysr-ri-jFJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pmh-MQ-cJD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNZ-Km-KMM">
+                                <rect key="frame" x="0.0" y="20" width="600" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-Ba-xon" customClass="PhotoImageView" customModule="ScavengerHunt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="167" id="EGv-dD-izJ"/>
+                                            <constraint firstAttribute="height" constant="150" id="jVh-e8-56o"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dny-G1-OQC">
+                                        <rect key="frame" x="175" y="101" width="32" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="IoN-k4-m3d"/>
+                                            <constraint firstAttribute="width" constant="32" id="vmq-kp-vXr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" red="1" green="0.65789473679999999" blue="0.41447368420000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP2-c6-AbR">
+                                        <rect key="frame" x="175" y="126" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="clg-AB-OBJ"/>
+                                            <constraint firstAttribute="height" constant="16" id="mMR-su-zAi"/>
+                                        </constraints>
+                                        <state key="normal" title="Website" image="world"/>
+                                        <connections>
+                                            <action selector="loadWebsite:" destination="d39-3a-FcG" eventType="touchUpInside" id="8Bj-g6-hPX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eDf-4q-w9b">
+                                        <rect key="frame" x="175" y="9" width="399" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZQ-og-49o">
+                                        <rect key="frame" x="175" y="38" width="197" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="197" id="C4m-LP-7qP"/>
+                                            <constraint firstAttribute="height" constant="59" id="hhh-ck-Wof"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6HT-Mx-0b0">
+                                        <rect key="frame" x="210" y="101" width="110" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="4Tp-lz-MJC"/>
+                                            <constraint firstAttribute="height" constant="18" id="GVR-Yk-I2B"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="XP2-c6-AbR" firstAttribute="top" secondItem="Dny-G1-OQC" secondAttribute="bottom" constant="3" id="3Mc-iF-7Z7"/>
+                                    <constraint firstItem="6HT-Mx-0b0" firstAttribute="top" secondItem="Dny-G1-OQC" secondAttribute="top" id="4UK-ld-A6x"/>
+                                    <constraint firstItem="Dny-G1-OQC" firstAttribute="leading" secondItem="NZQ-og-49o" secondAttribute="leading" id="9lk-69-nHq"/>
+                                    <constraint firstItem="Dny-G1-OQC" firstAttribute="top" secondItem="NZQ-og-49o" secondAttribute="bottom" constant="4" id="9xW-dM-u3B"/>
+                                    <constraint firstAttribute="trailing" secondItem="eDf-4q-w9b" secondAttribute="trailing" constant="26" id="EP4-OD-XUB"/>
+                                    <constraint firstItem="NZQ-og-49o" firstAttribute="leading" secondItem="eDf-4q-w9b" secondAttribute="leading" id="Lwd-Dh-U8t"/>
+                                    <constraint firstItem="eDf-4q-w9b" firstAttribute="top" secondItem="PNZ-Km-KMM" secondAttribute="top" constant="8" id="RCN-T5-H5n"/>
+                                    <constraint firstItem="NZQ-og-49o" firstAttribute="top" secondItem="eDf-4q-w9b" secondAttribute="bottom" constant="-4" id="cbi-ey-Wpv"/>
+                                    <constraint firstAttribute="height" constant="150" id="gQO-7s-MxN"/>
+                                    <constraint firstAttribute="bottom" secondItem="XP2-c6-AbR" secondAttribute="bottom" constant="8" id="ipo-RE-iD0"/>
+                                    <constraint firstItem="yOv-Ba-xon" firstAttribute="leading" secondItem="PNZ-Km-KMM" secondAttribute="leading" id="kWa-MP-DRO"/>
+                                    <constraint firstItem="6HT-Mx-0b0" firstAttribute="leading" secondItem="Dny-G1-OQC" secondAttribute="trailing" constant="3" id="llr-Hw-g7A"/>
+                                    <constraint firstItem="yOv-Ba-xon" firstAttribute="top" secondItem="PNZ-Km-KMM" secondAttribute="top" id="ohw-X6-dq1"/>
+                                    <constraint firstItem="XP2-c6-AbR" firstAttribute="leading" secondItem="yOv-Ba-xon" secondAttribute="trailing" constant="8" id="tf5-cx-mt7"/>
+                                    <constraint firstItem="eDf-4q-w9b" firstAttribute="leading" secondItem="yOv-Ba-xon" secondAttribute="trailing" constant="8" id="z36-yV-gbn"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btk-yJ-VNP" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
+                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PNZ-Km-KMM" firstAttribute="leading" secondItem="Pmh-MQ-cJD" secondAttribute="leadingMargin" constant="-20" id="0IQ-YR-9Pj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PNZ-Km-KMM" secondAttribute="trailing" constant="-20" id="Bhf-Ja-pw7"/>
+                            <constraint firstItem="Btk-yJ-VNP" firstAttribute="leading" secondItem="Pmh-MQ-cJD" secondAttribute="leadingMargin" constant="-20" id="PN4-vb-A0S"/>
+                            <constraint firstItem="Btk-yJ-VNP" firstAttribute="top" secondItem="PNZ-Km-KMM" secondAttribute="bottom" constant="-1" id="Qr7-OA-czw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Btk-yJ-VNP" secondAttribute="trailing" constant="-20" id="U72-Ed-6x1"/>
+                            <constraint firstItem="ysr-ri-jFJ" firstAttribute="top" secondItem="Btk-yJ-VNP" secondAttribute="bottom" id="Xgb-Ni-Y5b"/>
+                            <constraint firstItem="PNZ-Km-KMM" firstAttribute="top" secondItem="n78-Wo-DoO" secondAttribute="bottom" constant="1" id="zqx-1h-s3Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="address" destination="NZQ-og-49o" id="JEW-hu-7MW"/>
+                        <outlet property="mapView" destination="Btk-yJ-VNP" id="H3j-xm-fh9"/>
+                        <outlet property="placeImageView" destination="yOv-Ba-xon" id="hdf-dN-yVU"/>
+                        <outlet property="placeName" destination="eDf-4q-w9b" id="Sr3-A1-fQ3"/>
+                        <outlet property="placeRating" destination="Dny-G1-OQC" id="JZL-VL-hub"/>
+                        <outlet property="starRating" destination="6HT-Mx-0b0" id="9uc-IL-Ftp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYE-nR-dVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352" y="-511"/>
+        </scene>
     </scenes>
     <resources>
         <image name="disclosureIndicator" width="8" height="13"/>
         <image name="nyc" width="736" height="1309"/>
+        <image name="world" width="93" height="93"/>
     </resources>
 </document>
