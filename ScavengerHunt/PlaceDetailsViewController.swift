@@ -98,7 +98,6 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
     
     @IBAction func addPhotoButtonPressed(sender: AnyObject) {
         
-        print("add photo pressed")
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             imagePicker.sourceType = .Camera
@@ -138,15 +137,9 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             
             let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                var selectedItem = googlePlaces![indexPath.row]
-//                let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
-//                selectedItem.photo = photo
-//                dismissViewControllerAnimated(true, completion: {
-//                    //                self.googlePlaces.save()
-//                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-//                })
-//            }
+            placeImageView.image = photo
+            dismissViewControllerAnimated(true, completion: nil)
+
         }
     
     
