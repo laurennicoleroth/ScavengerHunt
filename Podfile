@@ -5,6 +5,7 @@ target 'ScavengerHunt' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'xcode7.1'
   pod 'Alamofire', '~> 3.4'
   pod 'GoogleMaps'
+  pod 'Firebase'
 end
 
 target 'ScavengerHuntTests' do
