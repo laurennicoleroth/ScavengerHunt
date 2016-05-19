@@ -288,10 +288,12 @@
                                             <constraint firstAttribute="height" constant="18" id="GVR-Yk-I2B"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAp-lH-J6G">
-                                        <rect key="frame" x="47" y="109" width="72" height="30"/>
-                                        <state key="normal" title="Add Photo">
-                                            <color key="titleColor" red="0.099097289259999999" green="0.8992904934" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAp-lH-J6G">
+                                        <rect key="frame" x="-471" y="-378" width="1109" height="1024"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.25" height="0.050000000000000003"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="addPhotoButtonPressed:" destination="d39-3a-FcG" eventType="touchUpInside" id="4MZ-H9-ibx"/>
@@ -334,6 +336,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPhotoButton" destination="zAp-lH-J6G" id="017-K7-L0P"/>
                         <outlet property="address" destination="NZQ-og-49o" id="JEW-hu-7MW"/>
                         <outlet property="mapView" destination="Btk-yJ-VNP" id="H3j-xm-fh9"/>
                         <outlet property="placeImageView" destination="yOv-Ba-xon" id="hdf-dN-yVU"/>

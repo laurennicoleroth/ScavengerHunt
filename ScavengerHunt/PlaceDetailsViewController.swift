@@ -20,6 +20,7 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet var address: UILabel!
     @IBOutlet var starRating: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
     
     var placeTitle = "Change me"
     
@@ -66,29 +67,7 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
             }
             
             
-            //Display map
-//            let coordinates : CLLocationCoordinate2D = CLLocationCoordinate2DMake(place.latitude, place.longitude)
-//            
-//            let camera : GMSCameraPosition = GMSCameraPosition(target:coordinates, zoom:15, bearing:0, viewingAngle:0)
-//            
-//            self.mapView.camera = camera
-//            self.mapView.myLocationEnabled = true
-//            self.mapView.delegate = self;
-//            
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
-//            self.view.addGestureRecognizer(tapGestureRecognizer)
-//            
-//            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
-//            self.view.addGestureRecognizer(longPressRecognizer)
-//            
-//            var touchPoint = longPressRecognizer.locationInView(mapView)
-//            var touchCoordinates = mapView.convertPoint(touchPoint, toCoordinateSpace: mapView)
-//
-//            let marker : GMSMarker = GMSMarker()
-//            marker.position = CLLocationCoordinate2D(latitude: 40.74, longitude: -73.34)
-//            marker.title = place.name
-//            marker.icon =  UIImage(named:"locationPin")
-//            marker.map = self.mapView;
+ 
             
             let longPressRecognizer = UITapGestureRecognizer(target: self, action: "longPressed:")
             self.view.addGestureRecognizer(longPressRecognizer)
@@ -122,6 +101,7 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         
         //If user guesses within 1000 ft, the answer is revealed!
         if distance < 1000.00 {
+            addPhotoButton.hidden = true
             placeName.text = "Congrats! You found: " + place!.name
             address.text = place!.address
             placeImageView.image = place!.photo
