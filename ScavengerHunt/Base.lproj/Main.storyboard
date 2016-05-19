@@ -24,10 +24,10 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyc" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-6Z-XQq">
                                         <rect key="frame" x="0.0" y="-64" width="600" height="600"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXa-Vv-lwb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXa-Vv-lwb">
                                         <rect key="frame" x="223" y="452" width="155" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="duY-94-yrS"/>
+                                            <constraint firstAttribute="height" constant="45" id="duY-94-yrS"/>
                                             <constraint firstAttribute="width" constant="155" id="vbf-Nq-DDI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
@@ -35,14 +35,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-Pl-iMq">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-Pl-iMq">
                                         <rect key="frame" x="290" y="314" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="2Ok-Oe-FGJ"/>
                                             <constraint firstAttribute="width" constant="20" id="Veb-XB-8iB"/>
                                         </constraints>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Museum Hunt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-dV-pNf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scavenger Hunt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-dV-pNf">
                                         <rect key="frame" x="26" y="52" width="549" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="136" id="eC4-Hw-UNn"/>
@@ -63,9 +63,9 @@
                                     <constraint firstItem="aqs-6Z-XQq" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leading" id="der-jy-hTR"/>
                                     <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerY" secondItem="kC2-YO-KDe" secondAttribute="centerY" id="eBG-fL-BzQ"/>
                                     <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="mQs-lQ-ro3"/>
-                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leadingMargin" constant="6" id="qXc-wC-LJY"/>
+                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leadingMargin" constant="18" id="qXc-wC-LJY"/>
                                     <constraint firstItem="xRH-Pl-iMq" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="wZj-4u-rVw"/>
-                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="top" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="27" id="z10-ai-qwa"/>
+                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="top" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="-183" id="z10-ai-qwa"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
