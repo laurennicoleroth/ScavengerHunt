@@ -111,11 +111,18 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         marker.map = mapView
         marker.title =  placeTitle
         marker.icon =  UIImage(named:"locationPin")
+        checkMarkerPlacement(coordinate)
     }
     
     func checkMarkerPlacement(coordinates: CLLocationCoordinate2D) {
-        print("You pinned \(coordinates)")
-        print("Correct is \")
+        
+        let pinnedLocation = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        let accurateLocation = CLLocation(latitude: place!.latitude, longitude: place!.longitude)
+        let distance = accurateLocation.distanceFromLocation(pinnedLocation)
+        
+        placeName.text = "Correct location is \(distance) away!"
+        print("Distance from correct location is: \(distance)")
+        
     }
     
     
