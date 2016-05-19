@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Welcome View Controller-->
@@ -16,9 +17,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kC2-YO-KDe">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyc" translatesAutoresizingMaskIntoConstraints="NO" id="aqs-6Z-XQq">
+                                        <rect key="frame" x="0.0" y="-64" width="600" height="600"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXa-Vv-lwb">
+                                        <rect key="frame" x="223" y="452" width="155" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="duY-94-yrS"/>
+                                            <constraint firstAttribute="width" constant="155" id="vbf-Nq-DDI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-Pl-iMq">
+                                        <rect key="frame" x="290" y="314" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="2Ok-Oe-FGJ"/>
+                                            <constraint firstAttribute="width" constant="20" id="Veb-XB-8iB"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Museum Hunt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-dV-pNf">
+                                        <rect key="frame" x="26" y="52" width="549" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="136" id="eC4-Hw-UNn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="51"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="top" secondItem="kC2-YO-KDe" secondAttribute="top" constant="52" id="B9x-w5-EnW"/>
+                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="centerX" secondItem="aqs-6Z-XQq" secondAttribute="centerX" id="Kbp-yq-YGe"/>
+                                    <constraint firstAttribute="bottom" secondItem="aqs-6Z-XQq" secondAttribute="bottom" id="KqD-kB-hZm"/>
+                                    <constraint firstAttribute="bottom" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="39" id="Lfv-ot-YJo"/>
+                                    <constraint firstItem="aqs-6Z-XQq" firstAttribute="top" secondItem="HCg-dV-pNf" secondAttribute="bottom" constant="-252" id="VMl-PD-bhg"/>
+                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="centerX" secondItem="xRH-Pl-iMq" secondAttribute="centerX" id="aut-Yy-y9d"/>
+                                    <constraint firstItem="aqs-6Z-XQq" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leading" id="der-jy-hTR"/>
+                                    <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerY" secondItem="kC2-YO-KDe" secondAttribute="centerY" id="eBG-fL-BzQ"/>
+                                    <constraint firstItem="JXa-Vv-lwb" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="mQs-lQ-ro3"/>
+                                    <constraint firstItem="HCg-dV-pNf" firstAttribute="leading" secondItem="kC2-YO-KDe" secondAttribute="leadingMargin" constant="6" id="qXc-wC-LJY"/>
+                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="centerX" secondItem="kC2-YO-KDe" secondAttribute="centerX" id="wZj-4u-rVw"/>
+                                    <constraint firstItem="xRH-Pl-iMq" firstAttribute="top" secondItem="JXa-Vv-lwb" secondAttribute="bottom" constant="27" id="z10-ai-qwa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eBG-fL-BzQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kC2-YO-KDe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0LX-fq-yZU"/>
+                            <constraint firstAttribute="trailing" secondItem="kC2-YO-KDe" secondAttribute="trailing" id="7rA-ds-EN3"/>
+                            <constraint firstItem="kC2-YO-KDe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Jc5-Pz-dEQ"/>
+                            <constraint firstItem="kC2-YO-KDe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aGZ-9R-rfX"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fXz-AK-hsM"/>
+                    <navigationItem key="navigationItem" id="pk9-jO-pT1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,4 +107,7 @@
             <point key="canvasLocation" x="322" y="-511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nyc" width="736" height="1309"/>
+    </resources>
 </document>
