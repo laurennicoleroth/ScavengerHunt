@@ -11,7 +11,7 @@ import Alamofire
 import GoogleMaps
 
 
-class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate{
+class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var place: Place?
     @IBOutlet var placeImageView: UIImageView!
@@ -24,6 +24,16 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate{
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
         
         placeName.numberOfLines = 3
         
@@ -118,6 +128,20 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate{
 //        }
         
     }
+    
+        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+            
+            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                var selectedItem = googlePlaces![indexPath.row]
+//                let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+//                selectedItem.photo = photo
+//                dismissViewControllerAnimated(true, completion: {
+//                    //                self.googlePlaces.save()
+//                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//                })
+//            }
+        }
     
     
     override func didReceiveMemoryWarning() {
