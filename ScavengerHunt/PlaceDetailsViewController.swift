@@ -25,16 +25,6 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         
         super.viewDidLoad()
         
-        let imagePicker = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-            imagePicker.sourceType = .Camera
-        } else {
-            imagePicker.sourceType = .PhotoLibrary
-        }
-
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
-        
         placeName.numberOfLines = 3
         
         if let place = place {
@@ -104,6 +94,22 @@ class PlaceDetailsViewController: UIViewController, GMSMapViewDelegate, UIImageP
         }
         
     }
+    
+    
+    @IBAction func addPhotoButtonPressed(sender: AnyObject) {
+        
+        print("add photo pressed")
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

@@ -288,6 +288,15 @@
                                             <constraint firstAttribute="height" constant="18" id="GVR-Yk-I2B"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAp-lH-J6G">
+                                        <rect key="frame" x="47" y="109" width="72" height="30"/>
+                                        <state key="normal" title="Add Photo">
+                                            <color key="titleColor" red="0.099097289259999999" green="0.8992904934" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPhotoButtonPressed:" destination="d39-3a-FcG" eventType="touchUpInside" id="4MZ-H9-ibx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
